@@ -7,10 +7,10 @@ import java.util.UUID;
 
 public interface AuthorService {
     List<AuthorDto> getAllAuthors();
-    Optional<AuthorDto> getAuthorById(UUID id);  // UUID kullanılıyor
+    Optional<AuthorDto> getAuthorById(UUID id); 
     AuthorDto createAuthor(AuthorDto authorDto);
-    AuthorDto updateAuthor(UUID id, AuthorDto authorDto);  // UUID kullanılıyor
-    void deleteAuthor(UUID id);  // UUID kullanılıyor
+    AuthorDto updateAuthor(UUID id, AuthorDto authorDto); 
+    void deleteAuthor(UUID id); 
 }
 
 
