@@ -27,13 +27,13 @@ public class BookAuthorController {
     }
 
     @GetMapping("/{id}")
-    public BookAuthorDto getBookAuthorById(@PathVariable UUID id) { // UUID kullanılıyor
+    public BookAuthorDto getBookAuthorById(@PathVariable UUID id) { 
         return bookAuthorService.getBookAuthorById(id);
     }
 
     @GetMapping("/book/{isbn}")
     public List<BookAuthorDto> getBookAuthorsByBook(@PathVariable Integer isbn) {
-        return bookAuthorService.getBookAuthorsByBook(isbn); // ISBN Integer olarak kalıyor
+        return bookAuthorService.getBookAuthorsByBook(isbn); 
     }
 }
 
