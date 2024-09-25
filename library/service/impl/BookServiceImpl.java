@@ -90,15 +90,12 @@ public class BookServiceImpl implements BookService {
     public BookDto updateBookStock(Integer isbn, int newStock) {
         Book book = bookRepository.findById(isbn)
                 .orElseThrow(() -> new BookNotFoundException("Book not found for ISBN: " + isbn));
-
-        // Mevcut rezervasyonları hesaba kat
         long currentReservations = book.getReservations().stream()
                 .filter(reservation -> reservation.getReservationEndDate().isAfter(LocalDate.now()))
                 .count();
 
-        // Yeni stok miktarını hesapla
         int remainingStock = newStock - (int) currentReservations;
-        book.setAvailableStock(Math.max(remainingStock, 0)); // Negatif stok olmasını engelle
+        book.setAvailableStock(Math.max(remainingStock, 0));
         bookRepository.save(book);
 
         return bookMapper.toDto(book);
