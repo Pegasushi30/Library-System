@@ -14,7 +14,7 @@ public class BookAuthor {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     @Column(updatable = false, nullable = false)
-    private UUID id; // UUID generation
+    private UUID id;
 
     @ManyToOne
     @JoinColumn(name = "book_isbn")
