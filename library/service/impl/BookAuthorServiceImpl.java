@@ -35,7 +35,7 @@ public class BookAuthorServiceImpl implements BookAuthorService {
     }
 
     @Override
-    public BookAuthorDto getBookAuthorById(UUID id) { // UUID kullanılıyor
+    public BookAuthorDto getBookAuthorById(UUID id) {
         return bookAuthorRepository.findById(id)
                 .map(bookAuthorMapper::toDto)
                 .orElseThrow(() -> new BookAuthorNotFoundException("BookAuthor not found for ID: " + id));
