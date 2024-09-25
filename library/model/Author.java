@@ -14,7 +14,7 @@ public class Author {
             strategy = "org.hibernate.id.UUIDGenerator"
     )
     @Column(updatable = false, nullable = false)
-    private UUID id;  // UUID now generated correctly
+    private UUID id;
     private String name;
     private String surname;
     private String birthdate;
