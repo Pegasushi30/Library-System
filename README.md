@@ -18,4 +18,5 @@ A modern **Library Management System** built with **Spring Boot** and **Hibernat
 - **UUID**: For unique, secure identifiers for all entities.
 
 ## Diagram:
-![image](https://github.com/user-attachments/assets/caad73fe-63f5-4b80-8372-becbcbab3e7b)
+![image](https://github.com/user-attachments/assets/d5061c75-eb49-452f-b4fa-683060184a71)
+
