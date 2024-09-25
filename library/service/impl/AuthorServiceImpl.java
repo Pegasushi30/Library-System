@@ -35,7 +35,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public Optional<AuthorDto> getAuthorById(UUID id) { // UUID kullanılıyor
+    public Optional<AuthorDto> getAuthorById(UUID id) {
         return authorRepository.findById(id).map(authorMapper::toDto);
     }
 
@@ -47,7 +47,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public AuthorDto updateAuthor(UUID id, AuthorDto authorDto) { // UUID kullanılıyor
+    public AuthorDto updateAuthor(UUID id, AuthorDto authorDto) {
         Author author = authorRepository.findById(id)
                 .orElseThrow(() -> new AuthorNotFoundException("Author not found for ID: " + id));
         author.setName(authorDto.name());
@@ -58,7 +58,7 @@ public class AuthorServiceImpl implements AuthorService {
     }
 
     @Override
-    public void deleteAuthor(UUID id) { // UUID kullanılıyor
+    public void deleteAuthor(UUID id) {
         authorRepository.deleteById(id);
     }
 }
